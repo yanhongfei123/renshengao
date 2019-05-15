@@ -1,0 +1,252 @@
+.container{
+  min-height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  color: #666;
+  margin-bottom: 30* 0.01rem;
+}
+
+.no-bg{
+    background: none !important;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    width: auto;
+}
+
+.icon-right{
+    width: 30* 0.01rem;
+    height: 30* 0.01rem;
+}
+
+.userinfo {
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -webkit-box;
+	width: 750* 0.01rem;
+	padding: 24* 0.01rem 0 12* 0.01rem;
+	background-color: #222;
+	color: #fff;
+	font-size: 28* 0.01rem;
+}
+
+.userinfo-avatar {
+    display: block;
+	width: 130* 0.01rem;
+	height: 130* 0.01rem;
+	margin: 0 24* 0.01rem;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.userinfo-content{
+    flex: 1;
+    display: block;
+	line-height: 42* 0.01rem;
+	padding: 4* 0.01rem 0;
+}
+
+.userinfo-content .icon-right{
+   width: 200* 0.01rem;
+   height: 42* 0.01rem;
+   background: url(https://www.ishiyaji.com/static/images/arrow-right.png) no-repeat right 11* 0.01rem;
+   background-size: 21* 0.01rem 21* 0.01rem;
+}
+
+.status-box{
+    width:100%;
+    height: 116* 0.01rem;
+    margin-top: 12* 0.01rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.status-box .status-label{
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    font-size:28* 0.01rem;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.status-box .icon-status{
+   width: 47* 0.01rem;
+   height: 47* 0.01rem;
+   margin-top: 12* 0.01rem;
+}
+
+.status-box .status-text{
+   margin-top: 12* 0.01rem;
+}
+
+.status-box .status-label .red-dot{
+    width: 16* 0.01rem;
+    height: 16* 0.01rem;
+    position: absolute;
+    left: 116* 0.01rem;
+    top:23* 0.01rem;
+    background-color: #f43530;
+    border-radius: 50%;
+}
+
+.pannel{
+    width: 100%;
+    margin-top: 12* 0.01rem;
+    background-color: #fff;
+}
+
+.pannel .pannel-title{
+    padding-left: 23* 0.01rem;
+    height: 58* 0.01rem;
+    line-height: 58* 0.01rem;
+    background: url(https://www.ishiyaji.com/static/images/arrow-right.png) no-repeat 98% center;
+    background-size: 16* 0.01rem auto,750* 0.01rem auto;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 28* 0.01rem;
+}
+
+.pannel-title navigator{
+    padding-left: 23* 0.01rem;
+}
+
+.pannel .content{
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -webkit-box;
+    font-size: 26* 0.01rem;
+    text-align: center;
+}
+
+.pannel .content .item{
+    flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    padding: 26* 0.01rem 0 40* 0.01rem;
+}
+
+.item .value{
+    color: #D61B52;
+    margin-bottom: 8* 0.01rem;
+}
+
+.item .text{
+    color: #D61B52;
+    font-size: 24* 0.01rem;
+    min-height: 24* 0.01rem;
+}
+
+.item .change{
+    font-size: 20* 0.01rem;
+}
+
+.pannel .content-service{
+    position: relative;
+    font-size: 26* 0.01rem;
+    text-align: center;
+    padding-top: 24* 0.01rem;
+    overflow: hidden;
+}
+
+.pannel .content-service .item{
+    width: 25%!important;
+    float: left;
+}
+
+.pannel .content-service .item img{
+    width: 47* 0.01rem;
+    height: 47* 0.01rem;
+    margin-bottom: 10* 0.01rem;
+}
+
+.pannel .content-service .item .text{
+    display: block;
+    padding-bottom: 44* 0.01rem;
+}
+
+.about{
+    width: 100%;
+    background: url(https://www.ishiyaji.com/static/images/arrow-right.png) no-repeat 750* 0.01rem center;
+    background-size: 16* 0.01rem auto,750* 0.01rem auto;
+    margin: 20* 0.01rem 0; 
+    height: 80* 0.01rem;
+    line-height: 80* 0.01rem;
+    padding-left: 100* 0.01rem;
+}
+
+.btn-cs{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    font-size:24* 0.01rem;
+    line-height: 1.6;
+    border-radius: none;
+    overflow:hidden;
+    color:#666;
+    background-color:#fff;
+    -webkit-tap-highlight-color: #fff;
+}
+button::after{
+    border: none;
+}
+
+.status-box .num{
+   position: absolute;
+   width: 30* 0.01rem;
+   height: 30* 0.01rem;
+   line-height: 30* 0.01rem;
+   background: #D61B52;
+   border-radius: 30* 0.01rem;
+   color: #fff;
+   font-size: 20* 0.01rem;
+   top: -4* 0.01rem;
+   right: 40* 0.01rem;
+}
+.my-grow img{
+  width: auto;
+  height: 40* 0.01rem;
+}
+.my-grow .icon-cont {
+  width: 60%;
+  background-color: rgba(215,215,215,1);
+  margin: 0 auto;
+  text-align: center;
+  padding:5* 0.01rem 0;
+  height: 50* 0.01rem;
+  border-radius: 30* 0.01rem;
+  position: relative;
+  z-index: 1;
+}
+
+.my-grow .item{
+  position: relative;
+}
+.my-grow .item::after{
+  position: absolute;
+  width: 100%;
+  height: 4* 0.01rem;
+  top: 56* 0.01rem;
+  left: 0;
+  background-color: rgba(215,215,215,1);
+  content: '';
+}
+.my-grow .item.finish .icon-cont{
+  background-color: rgba(189,35,76,1);
+}
+.my-grow .item.finish .item::after{
+  background-color: rgba(189,35,76,1);
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<title>我的</title>
+	<link rel="stylesheet" href="../dll/<%= htmlWebpackPlugin.options.libCssName %>">
+</head>
+
+<body>
+	<!-- <img src="${require('../imgs/flow_.png')}" alt=""/> 
+	<img width="300" src="${require('../imgs/banner02.jpg')}" alt=""/>  -->
+	<!-- <div id="container"></div> -->
+	<div class="container">
+		<div class="userinfo">
+			<div class="userinfo-avatar"></div>
+			<div class="userinfo-content">
+				<div class="userinfo-text">{{nickname}}
+					<div> ({{account_id}})</div>
+				</div>
+				<div class="userinfo-text">推荐人：<span class="ver-mid">{{parent_name}}</span></div>
+				<div class="userinfo-text">等级：<span class="ver-mid">{{level_name}}</span></div>
+				<div class="userinfo-text icon-right" bindtap="pannelTap" data-url="/pages/address-list/index">我的收货地址</div>
+			</div>
+		</div>
+
+
+    <div class="item status-box">
+			<!-- 请用js循环一下html，拼接字符串插入 -->
+			<div bindtap="statusTap" class="status-label">
+				<img class="icon-status" src="https://www.ishiyaji.com/static/images/my/icon-wallet.png"/>
+				<div class="status-text">待付款</div>
+				<div class='num'>10</div>
+			</div>
+			<div bindtap="statusTap" class="status-label">
+					<img class="icon-status" src="https://www.ishiyaji.com/static/images/my/icon-truck.png"/>
+					<div class="status-text">待发货</div>
+					<div class='num'>10</div>
+				</div>
+				<div bindtap="statusTap" class="status-label">
+						<img class="icon-status" src="https://www.ishiyaji.com/static/images/my/icon-package.png"/>
+						<div class="status-text">待收货</div>
+						<div class='num'>10</div>
+					</div>
+					<div bindtap="statusTap" class="status-label">
+							<img class="icon-status" src="https://www.ishiyaji.com/static/images/my/icon-order.png"/>
+							<div class="status-text">全部订单</div>
+							<div class='num'>10</div>
+						</div>
+						<div bindtap="statusTap" class="status-label">
+								<img class="icon-status" src="https://www.ishiyaji.com/static/images/my/icon-refund.png"/>
+								<div class="status-text">售后订单</div>
+								<div class='num'>10</div>
+							</div>							
+			<!-- 请用js循环一下html，拼接字符串插入 -->
+		</div>
+
+		<!-- 等级大于1才显示以下 -->
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/g-task/index?type=3" bindtap="pannelTap">我的进步</div>
+			<div class="content my-grow">
+				<div class="item" data-url="/pages/g-fifteen-change/index" bindtap="pannelTap">
+					<div class='icon-cont'>
+						<img src="https://www.ishiyaji.com/static/images/v2/15days.png" />
+					</div>
+					<div class="label">15天焕颜</div>
+				</div>
+				<div class="item" data-url="/pages/g-task/index?type=2" bindtap="pannelTap">
+					<div class='icon-cont'>
+						<img src="https://www.ishiyaji.com/static/images/v2/1p5group.png"/>
+					</div>
+					<div class="label">1+5小组</div>
+				</div>
+				<div class="item" data-url="/pages/g-task/index?type=3" bindtap="pannelTap">
+					<div class='icon-cont'>
+						<img src="https://www.ishiyaji.com/static/images/v2/marketingDirector.png"/>
+					</div>
+					<div class="label">营销总监</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/points-recruitment/index" bindtap="pannelTap">招募积分</div>
+			<div class="content">
+				<div class="item" bindtap="zmjfTap">
+					<div class="value">{{zmjf.jrzm}}</div>
+					<div class="label">今日招募积分</div>
+				</div>
+				<div class="item" bindtap="zmjfTap">
+					<div class="value">{{zmjf.byzm}}</div>
+					<div class="label">本月招募积分</div>
+				</div>
+				<div class="item" bindtap="zmjfTap">
+					<div class="value">{{zmjf.zzm}}</div>
+					<div class="label">总招募积分</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/points-sales/index" bindtap="pannelTap">销售积分</div>
+			<div class="content">
+				<div class="item" bindtap="xsjfTap">
+					<div class="value">{{sxjf.jrxs}}</div>
+					<div class="label">今日销售积分</div>
+				</div>
+				<div class="item" bindtap="xsjfTap">
+					<div class="value">{{sxjf.byxs}}</div>
+					<div class="label">本月销售积分</div>
+				</div>
+				<div class="item" bindtap="xsjfTap">
+					<div class="value">{{sxjf.zxs}}</div>
+					<div class="label">总销售积分</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/my-team/index" bindtap="pannelTap">我的团队</div>
+			<div class="content">
+				<div class="item" bindtap="myTeamTap">
+					<div class="value">{{myteam.coachDz}}</div>
+					<div class="label">辅导店长</div>
+				</div>
+				<div class="item" bindtap="myTeamTap">
+					<div class="value">{{myteam.adminDz}}</div>
+					<div class="label">管理店长</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/my-sales/index" bindtap="pannelTap">我的销售</div>
+			<div class="content">
+				<div class="item" data-url="/pages/my-sales/index?type=0" bindtap="pannelTap">
+					<div class="value">{{myxs.jrxse}}</div>
+					<div class="label">今日销售额</div>
+				</div>
+				<div class="item" data-url="/pages/my-sales/index?currentType=1" bindtap="pannelTap">
+					<div class="value">{{myxs.byxse}}</div>
+					<div class="label">本月销售额</div>
+				</div>
+				<div class="item" data-url="/pages/my-sales/index?currentType=2" bindtap="pannelTap">
+					<div class="value">{{myxs.zxse}}</div>
+					<div class="label">总销售额</div>
+				</div>
+			</div>
+		</div>
+		
+	<!-- 等级大于1才显示以下 -->
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/my-sales/index" bindtap="pannelTap">我的战绩</div>
+			<div class="content">
+				<div class="item" data-url="/pages/my-sales/index" bindtap="pannelTap">
+					<div class="value">{{myzj.byxse}}</div>
+					<div class="label text">差<span class="ver-mid">{{myzj.byxseCha}}</span>元即完成本月销售</div>
+					<div class="label change">本月比上月<span class="ver-mid">{{myzj.xseprveCha}}</span></div>
+				</div>
+				<div class="item" data-url="/pages/my-team/index" bindtap="pannelTap">
+					<div class="value">{{myzj.num}}</div>
+					<div class="label text" wx:if="{{myzj.next_level != ''}}">差<span class="ver-mid">{{myzj.numCha}}</span>人即升级<span class="ver-mid">{{myzj.next_level}}</span></div>
+					<div class="label text" wx:else></div>
+					<div class="label change">本月比上月<span class="ver-mid">{{myzj.numprveCha}}</span></div>
+				</div>
+			</div>
+		</div>
+
+<!-- 等级大于1才显示以下 -->
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/g-dividend/index" bindtap="pannelTap">我的分红</div>
+			<div class="content">
+				<div class="item" data-url="/pages/g-dividend/index?currentType=0" bindtap="pannelTap">
+					<div class="value">{{myfh.dsz_jf}}</div>
+					<div class="label">分公司董事长</div>
+				</div>
+				<div class="item" data-url="/pages/g-dividend/index?currentType=1" bindtap="pannelTap">
+					<div class="value">{{myfh.fhgd_jf}}</div>
+					<div class="label">分红股东</div>
+				</div>
+				<div class="item" data-url="/pages/g-dividend/index?currentType=2" bindtap="pannelTap">
+					<div class="value">{{myfh.jqfh_jf}}</div>
+					<div class="label">加权分红</div>
+				</div>
+			</div>
+		</div>
+	<!-- 等级大于1才显示以下 -->
+		<div class="pannel">
+			<div class="pannel-title" data-url="/pages/g-tutorship-bonus/index?type=1" bindtap="pannelTap">辅导奖励</div>
+			<div class="content">
+				<div class="item" data-url="/pages/g-tutorship-bonus/index?type=1" bindtap="pannelTap">
+					<div class="value">{{fdjl.zj_jf}}</div>
+					<div class="label">总监辅导奖</div>
+				</div>
+				<div class="item" data-url="/pages/g-tutorship-bonus/index?type=2" bindtap="pannelTap">
+					<div class="value">{{fdjl.zjl_jf}}</div>
+					<div class="label">总经理辅导奖</div>
+				</div>
+				<div class="item" data-url="/pages/g-tutorship-bonus/index?type=3" bindtap="pannelTap">
+					<div class="value">{{fdjl.dsz_jf}}</div>
+					<div class="label">董事长辅导奖</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pannel pannel-service">
+			<div class="pannel-title no-bg">我的服务</div>
+			<div class="content-service">
+				<div class="item" bindtap="serviceTap" data-url="/pages/my-miniQrcode/index" wx:if="{{level >= 1}}">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-promotion.png"/>
+					<div class="text">推广海报</div>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/redeem/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-score.png" />
+					<div class="text">积分兑换</div>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/my-coupons/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-coupon.png" />
+					<div class="text">优惠券</div>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/team-ranking/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-team.png" />
+					<div class="text">团队榜单</div>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/my-profile/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-profile.png" />
+					<div class="text">个人资料</div>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/my-favor/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-favor.png" />
+					<div class="text">我的收藏</div>
+				</div>
+				<div class="item">
+					<button style="border:none" open-type="contact" class="btn-cs">
+						<div class="content-ctn">
+							<img src="https://www.ishiyaji.com/static/images/my/icon-cs.png" />
+							<div class="text">平台服务</div>
+						</div>
+					</button>
+				</div>
+				<div class="item" bindtap="serviceTap" data-url="/pages/sales-rank/index">
+					<img src="https://www.ishiyaji.com/static/images/my/icon-sales.png" />
+					<div class="text">销售榜单</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../dll/<%= htmlWebpackPlugin.options.libJsName %>"></script>
+</body>
+
+</html>
