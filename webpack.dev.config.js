@@ -1,8 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const config = require("./webpack.base.config");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const commonConfig = require("./webpack.com.config.js");
 
 // config.externals = {

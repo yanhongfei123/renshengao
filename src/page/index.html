@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>我的</title>
+    <link rel="stylesheet" href="../dll/<%= htmlWebpackPlugin.options.libCssName %>">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <div wx:for="{{banners}}" wx:key="id">
+                <div class="swiper-item">
+                    <img bindtap="tapBanner" data-id="{{item.businessId}}" data-url="{{item.banner_url}}" src="{{item.banner_imgfile}}" class="slide-image" />
+                </div>
+            </div>
+        </div>
+        <div class="dots">
+            <div wx:for="{{banners}}" wx:key="unique">
+                <div class="dot{{index == swiperCurrent ? ' active' : ''}}"></div>
+            </div>
+        </div>
+    </div>
+
+    <scroll-div class="type-container" scroll-x="true" wx:if="{{categories.length > 0}}">
+        <div class="type-navbar">
+            <div bindtap="categoryClick" data-cate_id="{{item.cate_id}}" class="type-box" wx:for="{{categories}}" wx:key="index">
+                <img src="{{item.cate_img}}"/>
+                <div class="type-navbar-item">
+                    {{item.cate_name}}
+                </div>
+            </div>
+        </div>
+    </scroll-div>
+
+    <div class="search-div">
+        <div bindtap="toSearch" class='city'>{{city}}</div>
+        <div class="search-content">
+            <img src="https://www.ishiyaji.com/static/images/search-pic.png" class="search-icon" />
+            <input type='text' placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="search" bindinput='listenerSearchInput' bindconfirm='toSearch'/>
+        </div>
+    </div>
+
+    <div class="img-wrap" wx:for="{{adverList}}" wx:key="{{i}}">
+        <img mode="widthFix" class="home-img" bindtap='adverItemTap' data-url="{{ item.banner_url }}" src='{{item.banner_imgfile}}'/>
+    </div>
+
+    <div class="goods-container">
+        <div class="goods-box" wx:for-items="{{homeGoodsData}}" wx:key="{{index}}">
+            <div class='new-tag' wx:if="{{item.is_new == 2}}">新品</div>
+            <div bindtap="orderDetailsTap" data-id="{{item.goods_id}}" class="img-box">
+                <img src="{{item.thumb_image}}" class="image" mode="aspectFit" lazy-load="true" />
+            </div>
+            <div bindtap="orderDetailsTap" data-id="{{item.goods_id}}" class="goods-title">{{item.goods_name}}</div>
+            <div class='price-wrap'>
+                <div class="goods-price">
+                    <div class='yang'>¥ </div>
+                    <div class='price'>{{item.shop_price}}</div>
+                </div>
+                <div class='origin-price'>
+                    <div class='yang oy'>¥ </div>
+                    <div class='price orice'>{{item.market_price}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</div>
+</div>
+
+<script src="../dll/<%= htmlWebpackPlugin.options.libJsName %>"></script>
+</body>
+
+</html>
